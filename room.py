@@ -24,6 +24,9 @@ class Room:
         self.__price_per_night = price_per_night
         self.__is_available = is_available
 
+
+
+    # Setters & Getters
     def get_room_number(self) -> int:
         """Returns the room number."""
         return self.__room_number
@@ -39,6 +42,10 @@ class Room:
     def get_price_per_night(self) -> float:
         """Returns the room's nightly price."""
         return self.__price_per_night
+
+    def set_price_per_night(self, new_price: float) -> None:
+        """Sets a new price per night for the room."""
+        self.__price_per_night = new_price
 
     def is_available(self) -> bool:
         """Returns True if the room is available, False otherwise."""
