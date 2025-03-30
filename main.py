@@ -19,6 +19,11 @@ def test_donald_trump():
     print("===== Test Case: Donald Trump =====")
     # Guest Account Creation with Loyalty Program
     loyalty_donald = LoyaltyProgram(points=500, tier="Gold")
+    # Exception Handling: Try redeeming too many points
+    try:
+        loyalty_donald.redeem(10000)  # too many points
+    except Exception as e:
+        print(f"Exception: {e}")
     donald = Guest(name="Donald Trump", email="donald@trump.com", phone="555-0101", loyalty=loyalty_donald)
     donald.create_account()
     
@@ -58,6 +63,11 @@ def test_joe_biden():
     print("===== Test Case: Joe Biden =====")
     # Guest Account Creation with Loyalty Program
     loyalty_joe = LoyaltyProgram(points=300, tier="Silver")
+    # Exception Handling: Try redeeming too many points
+    try:
+        loyalty_joe.redeem(10000)
+    except Exception as e:
+        print(f"Exception: {e}")
     joe = Guest(name="Joe Biden", email="joe@biden.com", phone="555-0202", loyalty=loyalty_joe)
     joe.create_account()
     
